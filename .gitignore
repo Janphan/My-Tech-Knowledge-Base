@@ -1,0 +1,35 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Docusaurus
+website/build/
+website/.docusaurus/
+website/.cache/
+website/node_modules/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*.local
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Coverage and build outputs
+coverage/
+dist/
+
+# Misc
+.cache/
+*.tgz
