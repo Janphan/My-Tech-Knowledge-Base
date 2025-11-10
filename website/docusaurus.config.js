@@ -4,10 +4,14 @@ module.exports = {
   url: 'https://janphan.github.io',
   baseUrl: '/My-Tech-Knowledge-Base/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Janphan',
   projectName: 'My-Tech-Knowledge-Base',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
