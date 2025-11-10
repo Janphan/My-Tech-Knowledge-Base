@@ -14,7 +14,11 @@ website/node_modules/
 logs/
 *.log
 
-# OS files
+# OS filescd website
+npm install
+git add package-lock.json
+git commit -m "chore(website): add package-lock for CI"
+git push
 .DS_Store
 Thumbs.db
 
