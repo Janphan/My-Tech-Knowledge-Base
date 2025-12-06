@@ -1,4 +1,6 @@
-# Remove git commit to remote:
+# Github_commands
+
+- Remove git commit to remote:
 
 `git rebase -i HEAD~1`
 
