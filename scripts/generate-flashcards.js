@@ -1,0 +1,294 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+const ABBREVIATIONS_FILE = path.join(__dirname, '..', 'website', 'docs', '01_Core_Concepts', 'Abbreviations.md');
+const OUTPUT_DIR = path.join(__dirname, '..', 'flashcards');
+const WEBSITE_STATIC_DIR = path.join(__dirname, '..', 'website', 'static', 'flashcards');
+
+function parseAbbreviations(content) {
+  const lines = content.split('\n');
+  const flashcards = [];
+  let currentSection = '';
+
+  lines.forEach((line) => {
+    const sectionMatch = line.match(/^##\s+(.+)$/);
+    if (sectionMatch) {
+      currentSection = sectionMatch[1].trim();
+      return;
+    }
+
+    const abbrMatch = line.match(/-\s*\*\*([^*]+)\*\*\s*:\s*(.+)/);
+    if (abbrMatch) {
+      flashcards.push({
+        term: abbrMatch[1].trim(),
+        definition: abbrMatch[2].trim(),
+        section: currentSection
+      });
+    }
+  });
+
+  return flashcards;
+}
+
+function generateJSONFormat(flashcards) {
+  return JSON.stringify(flashcards, null, 2);
+}
+
+function generateQuizHTMLFormat(flashcards) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Abbreviations Quiz</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        h1 { text-align: center; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .description { text-align: center; margin-bottom: 20px; opacity: 0.9; }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .progress { text-align: center; margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+        .deck-section { display: flex; justify-content: center; align-items: center; margin-bottom: 30px; gap: 20px; }
+        .deck-visualization { position: relative; width: 120px; height: 160px; }
+        .deck-card {
+            position: absolute;
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 8px;
+            border: 2px solid #e1e8ed;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+        .deck-card:nth-child(1) { transform: rotate(-2deg) translateX(-5px); z-index: 3; }
+        .deck-card:nth-child(2) { transform: rotate(1deg) translateX(-2px); z-index: 2; }
+        .deck-card:nth-child(3) { transform: rotate(-1deg) translateX(2px); z-index: 1; }
+        .deck-info { text-align: center; }
+        .deck-label { display: block; font-size: 14px; opacity: 0.8; margin-bottom: 5px; }
+        .deck-count { font-size: 24px; font-weight: bold; }
+        .flashcard-container { perspective: 1000px; height: 300px; margin-bottom: 20px; }
+        .flashcard {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .flashcard.flipped { transform: rotateY(180deg); }
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .flashcard-front { background: linear-gradient(145deg, #ffffff, #f0f0f0); color: #2c3e50; border: 2px solid #e1e8ed; }
+        .flashcard-back { background: linear-gradient(145deg, #3498db, #2980b9); color: white; transform: rotateY(180deg); border: 2px solid #21618c; font-size: 20px; }
+        .category { text-align: center; margin-bottom: 30px; font-style: italic; opacity: 0.9; }
+        .controls { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .btn.primary { background: linear-gradient(145deg, #27ae60, #2ecc71); color: white; }
+        .btn.secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .completion-message { text-align: center; font-size: 24px; margin-top: 50px; display: none; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-5px);
+        }
+        @media (max-width: 768px) {
+            .flashcard-container { height: 250px; }
+            .flashcard-face { font-size: 20px; padding: 20px; }
+            .controls { flex-direction: column; align-items: center; }
+            .btn { width: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="/My-Tech-Knowledge-Base/" class="back-link">← Back to Docs</a>
+    <h1>Tech Abbreviations Quiz</h1>
+    <p class="description">Test your knowledge with random flashcards from the deck</p>
+    <div class="instructions"><strong>How to study:</strong> Click card to flip • Press Enter/Space for next • R to reshuffle</div>
+    <div id="progress" class="progress">Studied: 0 | Remaining: ${flashcards.length}</div>
+    <div class="deck-section">
+        <div class="deck-visualization" id="deckVisualization"></div>
+        <div class="deck-info">
+            <span class="deck-label">Cards in deck:</span>
+            <span class="deck-count" id="deckCount">${flashcards.length}</span>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div id="flashcard" class="flashcard" onclick="flipCard()">
+            <div class="flashcard-face flashcard-front" id="term">${flashcards[0].term}</div>
+            <div class="flashcard-face flashcard-back" id="definition">${flashcards[0].definition}</div>
+        </div>
+    </div>
+    <div id="category" class="category">${flashcards[0].section}</div>
+    <div class="controls">
+        <button class="btn secondary" onclick="location.reload()">Shuffle</button>
+        <button class="btn primary" onclick="flipCard()">Flip Card</button>
+        <button class="btn" onclick="nextCard()">Next Card →</button>
+    </div>
+    <div id="completionMessage" class="completion-message">
+        Congratulations! You've studied all cards in the deck!<br>
+        <button class="btn primary" onclick="location.reload()" style="margin-top: 20px;">Study Again</button>
+    </div>
+    <script>
+        let deck = ${JSON.stringify(flashcards)};
+        let studiedCount = 0;
+        let isFlipped = false;
+
+        function shuffleDeck() {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+
+        function updateDeckVisualization() {
+            const deckVis = document.getElementById('deckVisualization');
+            deckVis.innerHTML = '';
+            const maxVisible = Math.min(3, deck.length);
+            for (let i = 0; i < maxVisible; i++) {
+                const card = document.createElement('div');
+                card.className = 'deck-card';
+                card.textContent = '📄';
+                deckVis.appendChild(card);
+            }
+        }
+
+        function updateProgress() {
+            document.getElementById('progress').textContent = \`Studied: \${studiedCount} | Remaining: \${deck.length}\`;
+            document.getElementById('deckCount').textContent = deck.length;
+        }
+
+        function flipCard() {
+            document.getElementById('flashcard').classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        }
+
+        function nextCard() {
+            if (deck.length === 0) return;
+            deck.shift();
+            studiedCount++;
+
+            if (deck.length === 0) {
+                document.querySelector('.flashcard-container').style.display = 'none';
+                document.querySelector('.controls').style.display = 'none';
+                document.querySelector('.deck-section').style.display = 'none';
+                document.getElementById('category').style.display = 'none';
+                document.getElementById('completionMessage').style.display = 'block';
+                return;
+            }
+
+            const nextCard = deck[0];
+            document.getElementById('term').textContent = nextCard.term;
+            document.getElementById('definition').textContent = nextCard.definition;
+            document.getElementById('category').textContent = nextCard.section;
+            document.getElementById('flashcard').classList.remove('flipped');
+            isFlipped = false;
+            updateProgress();
+            updateDeckVisualization();
+        }
+
+        shuffleDeck();
+        updateDeckVisualization();
+        updateProgress();
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === ' ' || event.key === 'Enter') {
+                event.preventDefault();
+                isFlipped ? nextCard() : flipCard();
+            } else if (event.key === 'r' || event.key === 'R') {
+                event.preventDefault();
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>`;
+}
+
+function main() {
+  try {
+    if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+    const content = fs.readFileSync(ABBREVIATIONS_FILE, 'utf8');
+    const flashcards = parseAbbreviations(content);
+
+    console.log(`Found ${flashcards.length} abbreviations\n`);
+
+    const formats = [
+      { name: 'json', ext: 'json', generator: generateJSONFormat },
+      { name: 'quiz', ext: 'html', generator: generateQuizHTMLFormat }
+    ];
+
+    formats.forEach(format => {
+      const outputPath = path.join(OUTPUT_DIR, `abbreviations-${format.name}.${format.ext}`);
+      fs.writeFileSync(outputPath, format.generator(flashcards));
+      console.log(`Generated ${format.name}: ${outputPath}`);
+    });
+
+    if (!fs.existsSync(WEBSITE_STATIC_DIR)) fs.mkdirSync(WEBSITE_STATIC_DIR, { recursive: true });
+    
+    fs.readdirSync(OUTPUT_DIR).forEach(file => {
+      fs.copyFileSync(path.join(OUTPUT_DIR, file), path.join(WEBSITE_STATIC_DIR, file));
+    });
+
+    console.log(`\nFiles copied to: ${WEBSITE_STATIC_DIR}`);
+    console.log('Access quiz from the website navbar!');
+  } catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) main();

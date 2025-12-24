@@ -1,0 +1,278 @@
+[
+  {
+    "term": "AAA",
+    "definition": "Arrange, Act, Assert - testing pattern for structuring test cases",
+    "section": "",
+    "fullDefinition": "AAA: Arrange, Act, Assert - testing pattern for structuring test cases"
+  },
+  {
+    "term": "API",
+    "definition": "Application Programming Interface",
+    "section": "",
+    "fullDefinition": "API: Application Programming Interface"
+  },
+  {
+    "term": "AWS",
+    "definition": "Amazon Web Services",
+    "section": "",
+    "fullDefinition": "AWS: Amazon Web Services"
+  },
+  {
+    "term": "BaaS",
+    "definition": "Backend as a Service",
+    "section": "",
+    "fullDefinition": "BaaS: Backend as a Service"
+  },
+  {
+    "term": "BDD",
+    "definition": "Behavior-Driven Development - software development approach focusing on behavior specifications",
+    "section": "",
+    "fullDefinition": "BDD: Behavior-Driven Development - software development approach focusing on behavior specifications"
+  },
+  {
+    "term": "CI/CD",
+    "definition": "Continuous Integration/Continuous Deployment",
+    "section": "",
+    "fullDefinition": "CI/CD: Continuous Integration/Continuous Deployment"
+  },
+  {
+    "term": "CSS",
+    "definition": "Cascading Style Sheets",
+    "section": "",
+    "fullDefinition": "CSS: Cascading Style Sheets"
+  },
+  {
+    "term": "DOM",
+    "definition": "Document Object Model",
+    "section": "",
+    "fullDefinition": "DOM: Document Object Model"
+  },
+  {
+    "term": "Docusaurus",
+    "definition": "Static site generator for documentation",
+    "section": "",
+    "fullDefinition": "Docusaurus: Static site generator for documentation"
+  },
+  {
+    "term": "Firebase",
+    "definition": "Google's mobile and web application development platform",
+    "section": "",
+    "fullDefinition": "Firebase: Google's mobile and web application development platform"
+  },
+  {
+    "term": "Git",
+    "definition": "Distributed version control system",
+    "section": "",
+    "fullDefinition": "Git: Distributed version control system"
+  },
+  {
+    "term": "GitHub",
+    "definition": "Web-based hosting service for Git repositories",
+    "section": "",
+    "fullDefinition": "GitHub: Web-based hosting service for Git repositories"
+  },
+  {
+    "term": "HTML",
+    "definition": "HyperText Markup Language",
+    "section": "",
+    "fullDefinition": "HTML: HyperText Markup Language"
+  },
+  {
+    "term": "JavaScript",
+    "definition": "Programming language for web development",
+    "section": "",
+    "fullDefinition": "JavaScript: Programming language for web development"
+  },
+  {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation",
+    "section": "",
+    "fullDefinition": "JSON: JavaScript Object Notation"
+  },
+  {
+    "term": ".NET",
+    "definition": "Microsoft's software framework for building various types of applications",
+    "section": "",
+    "fullDefinition": ".NET: Microsoft's software framework for building various types of applications"
+  },
+  {
+    "term": "Node.js",
+    "definition": "JavaScript runtime environment",
+    "section": "",
+    "fullDefinition": "Node.js: JavaScript runtime environment"
+  },
+  {
+    "term": "npm",
+    "definition": "Node Package Manager",
+    "section": "",
+    "fullDefinition": "npm: Node Package Manager"
+  },
+  {
+    "term": "PWA",
+    "definition": "Progressive Web App",
+    "section": "",
+    "fullDefinition": "PWA: Progressive Web App"
+  },
+  {
+    "term": "React",
+    "definition": "JavaScript library for building user interfaces",
+    "section": "",
+    "fullDefinition": "React: JavaScript library for building user interfaces"
+  },
+  {
+    "term": "REST",
+    "definition": "Representational State Transfer",
+    "section": "",
+    "fullDefinition": "REST: Representational State Transfer"
+  },
+  {
+    "term": "SQL",
+    "definition": "Structured Query Language",
+    "section": "",
+    "fullDefinition": "SQL: Structured Query Language"
+  },
+  {
+    "term": "SSR",
+    "definition": "Server-Side Rendering",
+    "section": "",
+    "fullDefinition": "SSR: Server-Side Rendering"
+  },
+  {
+    "term": "TypeScript",
+    "definition": "Typed superset of JavaScript",
+    "section": "",
+    "fullDefinition": "TypeScript: Typed superset of JavaScript"
+  },
+  {
+    "term": "UI",
+    "definition": "User Interface - the means by which a user interacts with a computer system",
+    "section": "",
+    "fullDefinition": "UI: User Interface - the means by which a user interacts with a computer system"
+  },
+  {
+    "term": "VS Code",
+    "definition": "Visual Studio Code editor",
+    "section": "",
+    "fullDefinition": "VS Code: Visual Studio Code editor"
+  },
+  {
+    "term": "XML",
+    "definition": "eXtensible Markup Language - markup language for encoding documents in a format readable by both humans and machines",
+    "section": "",
+    "fullDefinition": "XML: eXtensible Markup Language - markup language for encoding documents in a format readable by both humans and machines"
+  },
+  {
+    "term": "Props",
+    "definition": "Properties passed to React components to customize their behavior and appearance",
+    "section": "",
+    "fullDefinition": "Props: Properties passed to React components to customize their behavior and appearance"
+  },
+  {
+    "term": "useState",
+    "definition": "React hook for adding state management to functional components",
+    "section": "",
+    "fullDefinition": "useState: React hook for adding state management to functional components"
+  },
+  {
+    "term": "useEffect",
+    "definition": "React hook for performing side effects in functional components (like data fetching, subscriptions, or DOM manipulation)",
+    "section": "",
+    "fullDefinition": "useEffect: React hook for performing side effects in functional components (like data fetching, subscriptions, or DOM manipulation)"
+  },
+  {
+    "term": "useContext",
+    "definition": "React hook for consuming context values in functional components",
+    "section": "",
+    "fullDefinition": "useContext: React hook for consuming context values in functional components"
+  },
+  {
+    "term": "useReducer",
+    "definition": "React hook for managing complex state logic using a reducer function",
+    "section": "",
+    "fullDefinition": "useReducer: React hook for managing complex state logic using a reducer function"
+  },
+  {
+    "term": "JSX",
+    "definition": "JavaScript XML - syntax extension for JavaScript used in React for describing UI structure",
+    "section": "",
+    "fullDefinition": "JSX: JavaScript XML - syntax extension for JavaScript used in React for describing UI structure"
+  },
+  {
+    "term": "Build",
+    "definition": "Process of converting source code into executable software",
+    "section": "",
+    "fullDefinition": "Build: Process of converting source code into executable software"
+  },
+  {
+    "term": "Deploy",
+    "definition": "Process of making software available for use",
+    "section": "",
+    "fullDefinition": "Deploy: Process of making software available for use"
+  },
+  {
+    "term": "Lint",
+    "definition": "Process of checking code for potential errors and style issues",
+    "section": "",
+    "fullDefinition": "Lint: Process of checking code for potential errors and style issues"
+  },
+  {
+    "term": "Refactor",
+    "definition": "Process of restructuring code without changing its functionality",
+    "section": "",
+    "fullDefinition": "Refactor: Process of restructuring code without changing its functionality"
+  },
+  {
+    "term": "TDD",
+    "definition": "Test-Driven Development - software development approach where tests are written before code",
+    "section": "",
+    "fullDefinition": "TDD: Test-Driven Development - software development approach where tests are written before code"
+  },
+  {
+    "term": "Branch",
+    "definition": "Independent line of development in Git",
+    "section": "",
+    "fullDefinition": "Branch: Independent line of development in Git"
+  },
+  {
+    "term": "Commit",
+    "definition": "Snapshot of changes in Git",
+    "section": "",
+    "fullDefinition": "Commit: Snapshot of changes in Git"
+  },
+  {
+    "term": "Merge",
+    "definition": "Combining changes from different branches",
+    "section": "",
+    "fullDefinition": "Merge: Combining changes from different branches"
+  },
+  {
+    "term": "Pull Request",
+    "definition": "Request to merge changes from one branch to another",
+    "section": "",
+    "fullDefinition": "Pull Request: Request to merge changes from one branch to another"
+  },
+  {
+    "term": "Repository",
+    "definition": "Storage location for software packages",
+    "section": "",
+    "fullDefinition": "Repository: Storage location for software packages"
+  },
+  {
+    "term": "IaaS",
+    "definition": "Infrastructure as a Service",
+    "section": "",
+    "fullDefinition": "IaaS: Infrastructure as a Service"
+  },
+  {
+    "term": "PaaS",
+    "definition": "Platform as a Service",
+    "section": "",
+    "fullDefinition": "PaaS: Platform as a Service"
+  },
+  {
+    "term": "SaaS",
+    "definition": "Software as a Service",
+    "section": "",
+    "fullDefinition": "SaaS: Software as a Service"
+  }
+]

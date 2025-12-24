@@ -1,0 +1,232 @@
+[
+  {
+    "term": "AAA",
+    "definition": "Arrange, Act, Assert - testing pattern for structuring test cases",
+    "section": ""
+  },
+  {
+    "term": "API",
+    "definition": "Application Programming Interface",
+    "section": ""
+  },
+  {
+    "term": "AWS",
+    "definition": "Amazon Web Services",
+    "section": ""
+  },
+  {
+    "term": "BaaS",
+    "definition": "Backend as a Service",
+    "section": ""
+  },
+  {
+    "term": "BDD",
+    "definition": "Behavior-Driven Development - software development approach focusing on behavior specifications",
+    "section": ""
+  },
+  {
+    "term": "CI/CD",
+    "definition": "Continuous Integration/Continuous Deployment",
+    "section": ""
+  },
+  {
+    "term": "CSS",
+    "definition": "Cascading Style Sheets",
+    "section": ""
+  },
+  {
+    "term": "DOM",
+    "definition": "Document Object Model",
+    "section": ""
+  },
+  {
+    "term": "Docusaurus",
+    "definition": "Static site generator for documentation",
+    "section": ""
+  },
+  {
+    "term": "Firebase",
+    "definition": "Google's mobile and web application development platform",
+    "section": ""
+  },
+  {
+    "term": "Git",
+    "definition": "Distributed version control system",
+    "section": ""
+  },
+  {
+    "term": "GitHub",
+    "definition": "Web-based hosting service for Git repositories",
+    "section": ""
+  },
+  {
+    "term": "HTML",
+    "definition": "HyperText Markup Language",
+    "section": ""
+  },
+  {
+    "term": "JavaScript",
+    "definition": "Programming language for web development",
+    "section": ""
+  },
+  {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation",
+    "section": ""
+  },
+  {
+    "term": ".NET",
+    "definition": "Microsoft's software framework for building various types of applications",
+    "section": ""
+  },
+  {
+    "term": "Node.js",
+    "definition": "JavaScript runtime environment",
+    "section": ""
+  },
+  {
+    "term": "npm",
+    "definition": "Node Package Manager",
+    "section": ""
+  },
+  {
+    "term": "PWA",
+    "definition": "Progressive Web App",
+    "section": ""
+  },
+  {
+    "term": "React",
+    "definition": "JavaScript library for building user interfaces",
+    "section": ""
+  },
+  {
+    "term": "REST",
+    "definition": "Representational State Transfer",
+    "section": ""
+  },
+  {
+    "term": "SQL",
+    "definition": "Structured Query Language",
+    "section": ""
+  },
+  {
+    "term": "SSR",
+    "definition": "Server-Side Rendering",
+    "section": ""
+  },
+  {
+    "term": "TypeScript",
+    "definition": "Typed superset of JavaScript",
+    "section": ""
+  },
+  {
+    "term": "UI",
+    "definition": "User Interface - the means by which a user interacts with a computer system",
+    "section": ""
+  },
+  {
+    "term": "VS Code",
+    "definition": "Visual Studio Code editor",
+    "section": ""
+  },
+  {
+    "term": "XML",
+    "definition": "eXtensible Markup Language - markup language for encoding documents in a format readable by both humans and machines",
+    "section": ""
+  },
+  {
+    "term": "Props",
+    "definition": "Properties passed to React components to customize their behavior and appearance",
+    "section": ""
+  },
+  {
+    "term": "useState",
+    "definition": "React hook for adding state management to functional components",
+    "section": ""
+  },
+  {
+    "term": "useEffect",
+    "definition": "React hook for performing side effects in functional components (like data fetching, subscriptions, or DOM manipulation)",
+    "section": ""
+  },
+  {
+    "term": "useContext",
+    "definition": "React hook for consuming context values in functional components",
+    "section": ""
+  },
+  {
+    "term": "useReducer",
+    "definition": "React hook for managing complex state logic using a reducer function",
+    "section": ""
+  },
+  {
+    "term": "JSX",
+    "definition": "JavaScript XML - syntax extension for JavaScript used in React for describing UI structure",
+    "section": ""
+  },
+  {
+    "term": "Build",
+    "definition": "Process of converting source code into executable software",
+    "section": ""
+  },
+  {
+    "term": "Deploy",
+    "definition": "Process of making software available for use",
+    "section": ""
+  },
+  {
+    "term": "Lint",
+    "definition": "Process of checking code for potential errors and style issues",
+    "section": ""
+  },
+  {
+    "term": "Refactor",
+    "definition": "Process of restructuring code without changing its functionality",
+    "section": ""
+  },
+  {
+    "term": "TDD",
+    "definition": "Test-Driven Development - software development approach where tests are written before code",
+    "section": ""
+  },
+  {
+    "term": "Branch",
+    "definition": "Independent line of development in Git",
+    "section": ""
+  },
+  {
+    "term": "Commit",
+    "definition": "Snapshot of changes in Git",
+    "section": ""
+  },
+  {
+    "term": "Merge",
+    "definition": "Combining changes from different branches",
+    "section": ""
+  },
+  {
+    "term": "Pull Request",
+    "definition": "Request to merge changes from one branch to another",
+    "section": ""
+  },
+  {
+    "term": "Repository",
+    "definition": "Storage location for software packages",
+    "section": ""
+  },
+  {
+    "term": "IaaS",
+    "definition": "Infrastructure as a Service",
+    "section": ""
+  },
+  {
+    "term": "PaaS",
+    "definition": "Platform as a Service",
+    "section": ""
+  },
+  {
+    "term": "SaaS",
+    "definition": "Software as a Service",
+    "section": ""
+  }
+]

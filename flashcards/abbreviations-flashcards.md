@@ -1,0 +1,236 @@
+# Technology Abbreviations Flashcards
+
+Use these flashcards to study common tech abbreviations and acronyms.
+
+## 
+
+**AAA**
+Arrange, Act, Assert - testing pattern for structuring test cases
+
+---
+
+**API**
+Application Programming Interface
+
+---
+
+**AWS**
+Amazon Web Services
+
+---
+
+**BaaS**
+Backend as a Service
+
+---
+
+**BDD**
+Behavior-Driven Development - software development approach focusing on behavior specifications
+
+---
+
+**CI/CD**
+Continuous Integration/Continuous Deployment
+
+---
+
+**CSS**
+Cascading Style Sheets
+
+---
+
+**DOM**
+Document Object Model
+
+---
+
+**Docusaurus**
+Static site generator for documentation
+
+---
+
+**Firebase**
+Google's mobile and web application development platform
+
+---
+
+**Git**
+Distributed version control system
+
+---
+
+**GitHub**
+Web-based hosting service for Git repositories
+
+---
+
+**HTML**
+HyperText Markup Language
+
+---
+
+**JavaScript**
+Programming language for web development
+
+---
+
+**JSON**
+JavaScript Object Notation
+
+---
+
+**.NET**
+Microsoft's software framework for building various types of applications
+
+---
+
+**Node.js**
+JavaScript runtime environment
+
+---
+
+**npm**
+Node Package Manager
+
+---
+
+**PWA**
+Progressive Web App
+
+---
+
+**React**
+JavaScript library for building user interfaces
+
+---
+
+**REST**
+Representational State Transfer
+
+---
+
+**SQL**
+Structured Query Language
+
+---
+
+**SSR**
+Server-Side Rendering
+
+---
+
+**TypeScript**
+Typed superset of JavaScript
+
+---
+
+**UI**
+User Interface - the means by which a user interacts with a computer system
+
+---
+
+**VS Code**
+Visual Studio Code editor
+
+---
+
+**XML**
+eXtensible Markup Language - markup language for encoding documents in a format readable by both humans and machines
+
+---
+
+**Props**
+Properties passed to React components to customize their behavior and appearance
+
+---
+
+**useState**
+React hook for adding state management to functional components
+
+---
+
+**useEffect**
+React hook for performing side effects in functional components (like data fetching, subscriptions, or DOM manipulation)
+
+---
+
+**useContext**
+React hook for consuming context values in functional components
+
+---
+
+**useReducer**
+React hook for managing complex state logic using a reducer function
+
+---
+
+**JSX**
+JavaScript XML - syntax extension for JavaScript used in React for describing UI structure
+
+---
+
+**Build**
+Process of converting source code into executable software
+
+---
+
+**Deploy**
+Process of making software available for use
+
+---
+
+**Lint**
+Process of checking code for potential errors and style issues
+
+---
+
+**Refactor**
+Process of restructuring code without changing its functionality
+
+---
+
+**TDD**
+Test-Driven Development - software development approach where tests are written before code
+
+---
+
+**Branch**
+Independent line of development in Git
+
+---
+
+**Commit**
+Snapshot of changes in Git
+
+---
+
+**Merge**
+Combining changes from different branches
+
+---
+
+**Pull Request**
+Request to merge changes from one branch to another
+
+---
+
+**Repository**
+Storage location for software packages
+
+---
+
+**IaaS**
+Infrastructure as a Service
+
+---
+
+**PaaS**
+Platform as a Service
+
+---
+
+**SaaS**
+Software as a Service
+
+---
+
