@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Abbreviations Flashcards</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .stats {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            height: 200px;
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            color: #2c3e50;
+            border: 2px solid #e1e8ed;
+        }
+
+        .flashcard-back {
+            background: linear-gradient(145deg, #3498db, #2980b9);
+            color: white;
+            transform: rotateY(180deg);
+            border: 2px solid #21618c;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: white;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .progress {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c3e50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .flashcard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard-container {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🃏 Tech Abbreviations Flashcards</h1>
+    <p class="description">Master 46 essential technology terms with flippable flashcards</p>
+    <div class="stats">📊 Total Cards: 46</div>
+
+    <div class="instructions">
+        💡 <strong>How to use:</strong> Click any card to flip it and reveal the definition. Flip back to see the term again.
+    </div>
+
+    <div id="progress" class="progress">Flipped: 0 / 46</div>
+<h2 class="section-title"></h2><div class="flashcard-grid">
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">AAA</div>
+            <div class="flashcard-face flashcard-back">Arrange, Act, Assert - testing pattern for structuring test cases</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">API</div>
+            <div class="flashcard-face flashcard-back">Application Programming Interface</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">AWS</div>
+            <div class="flashcard-face flashcard-back">Amazon Web Services</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">BaaS</div>
+            <div class="flashcard-face flashcard-back">Backend as a Service</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">BDD</div>
+            <div class="flashcard-face flashcard-back">Behavior-Driven Development - software development approach focusing on behavior specifications</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">CI/CD</div>
+            <div class="flashcard-face flashcard-back">Continuous Integration/Continuous Deployment</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">CSS</div>
+            <div class="flashcard-face flashcard-back">Cascading Style Sheets</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">DOM</div>
+            <div class="flashcard-face flashcard-back">Document Object Model</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Docusaurus</div>
+            <div class="flashcard-face flashcard-back">Static site generator for documentation</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Firebase</div>
+            <div class="flashcard-face flashcard-back">Google's mobile and web application development platform</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Git</div>
+            <div class="flashcard-face flashcard-back">Distributed version control system</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">GitHub</div>
+            <div class="flashcard-face flashcard-back">Web-based hosting service for Git repositories</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">HTML</div>
+            <div class="flashcard-face flashcard-back">HyperText Markup Language</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">JavaScript</div>
+            <div class="flashcard-face flashcard-back">Programming language for web development</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">JSON</div>
+            <div class="flashcard-face flashcard-back">JavaScript Object Notation</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">.NET</div>
+            <div class="flashcard-face flashcard-back">Microsoft's software framework for building various types of applications</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Node.js</div>
+            <div class="flashcard-face flashcard-back">JavaScript runtime environment</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">npm</div>
+            <div class="flashcard-face flashcard-back">Node Package Manager</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">PWA</div>
+            <div class="flashcard-face flashcard-back">Progressive Web App</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">React</div>
+            <div class="flashcard-face flashcard-back">JavaScript library for building user interfaces</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">REST</div>
+            <div class="flashcard-face flashcard-back">Representational State Transfer</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">SQL</div>
+            <div class="flashcard-face flashcard-back">Structured Query Language</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">SSR</div>
+            <div class="flashcard-face flashcard-back">Server-Side Rendering</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">TypeScript</div>
+            <div class="flashcard-face flashcard-back">Typed superset of JavaScript</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">UI</div>
+            <div class="flashcard-face flashcard-back">User Interface - the means by which a user interacts with a computer system</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">VS Code</div>
+            <div class="flashcard-face flashcard-back">Visual Studio Code editor</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">XML</div>
+            <div class="flashcard-face flashcard-back">eXtensible Markup Language - markup language for encoding documents in a format readable by both humans and machines</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Props</div>
+            <div class="flashcard-face flashcard-back">Properties passed to React components to customize their behavior and appearance</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">useState</div>
+            <div class="flashcard-face flashcard-back">React hook for adding state management to functional components</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">useEffect</div>
+            <div class="flashcard-face flashcard-back">React hook for performing side effects in functional components (like data fetching, subscriptions, or DOM manipulation)</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">useContext</div>
+            <div class="flashcard-face flashcard-back">React hook for consuming context values in functional components</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">useReducer</div>
+            <div class="flashcard-face flashcard-back">React hook for managing complex state logic using a reducer function</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">JSX</div>
+            <div class="flashcard-face flashcard-back">JavaScript XML - syntax extension for JavaScript used in React for describing UI structure</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Build</div>
+            <div class="flashcard-face flashcard-back">Process of converting source code into executable software</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Deploy</div>
+            <div class="flashcard-face flashcard-back">Process of making software available for use</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Lint</div>
+            <div class="flashcard-face flashcard-back">Process of checking code for potential errors and style issues</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Refactor</div>
+            <div class="flashcard-face flashcard-back">Process of restructuring code without changing its functionality</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">TDD</div>
+            <div class="flashcard-face flashcard-back">Test-Driven Development - software development approach where tests are written before code</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Branch</div>
+            <div class="flashcard-face flashcard-back">Independent line of development in Git</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Commit</div>
+            <div class="flashcard-face flashcard-back">Snapshot of changes in Git</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Merge</div>
+            <div class="flashcard-face flashcard-back">Combining changes from different branches</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Pull Request</div>
+            <div class="flashcard-face flashcard-back">Request to merge changes from one branch to another</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">Repository</div>
+            <div class="flashcard-face flashcard-back">Storage location for software packages</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">IaaS</div>
+            <div class="flashcard-face flashcard-back">Infrastructure as a Service</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">PaaS</div>
+            <div class="flashcard-face flashcard-back">Platform as a Service</div>
+        </div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-face flashcard-front">SaaS</div>
+            <div class="flashcard-face flashcard-back">Software as a Service</div>
+        </div>
+    </div></div>
+    <script>
+        let flippedCount = 0;
+        const totalCards = 46;
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+
+            // Update progress
+            const isFlipped = card.classList.contains('flipped');
+            flippedCount += isFlipped ? 1 : -1;
+            document.getElementById('progress').textContent = `Flipped: ${flippedCount} / ${totalCards}`;
+
+            // Add visual feedback
+            if (isFlipped) {
+                card.style.boxShadow = '0 12px 35px rgba(0,0,0,0.3)';
+            } else {
+                card.style.boxShadow = '';
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === ' ') { // Spacebar
+                event.preventDefault();
+                const cards = document.querySelectorAll('.flashcard');
+                const randomCard = cards[Math.floor(Math.random() * cards.length)];
+                flipCard(randomCard);
+            }
+        });
+
+        // Add a fun Easter egg
+        console.log('🎉 Pro tip: Press SPACEBAR for a random card flip!');
+    </script>
+</body>
+</html>

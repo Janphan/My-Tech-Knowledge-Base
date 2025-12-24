@@ -14,7 +14,14 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'My Tech Knowledge Base',
-      items: [],
+      items: [
+        {
+          label: '🃏 Quiz',
+          position: 'right',
+          href: '/flashcards/abbreviations-quiz.html',
+          target: '_blank',
+        },
+      ],
     },
     // Make sure there is NO 'algolia: {...}' block here
   },
